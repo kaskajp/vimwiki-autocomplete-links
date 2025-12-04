@@ -1,0 +1,86 @@
+*vimwiki-autocomplete-links.txt*  Autocomplete [[links]] in Vimwiki
+
+Author:  Jonas Raneryd Imaizumi
+License: MIT
+
+==============================================================================
+CONTENTS                                    *vimwiki-autocomplete-links-contents*
+
+    1. Introduction .............. |vimwiki-autocomplete-links-intro|
+    2. Installation .............. |vimwiki-autocomplete-links-install|
+    3. Usage ..................... |vimwiki-autocomplete-links-usage|
+    4. Configuration ............. |vimwiki-autocomplete-links-config|
+    5. Mappings .................. |vimwiki-autocomplete-links-mappings|
+
+==============================================================================
+1. INTRODUCTION                                *vimwiki-autocomplete-links-intro*
+
+This plugin provides autocompletion for Vimwiki links. When you type `[[` and
+start typing a page name, you can press <C-Space> to get a list of matching
+wiki pages. Select one and press <Enter> to insert the link with closing `]]`.
+
+==============================================================================
+2. INSTALLATION                              *vimwiki-autocomplete-links-install*
+
+Using Vim 8 native packages: >
+
+    git clone https://github.com/kaskajp/vimwiki-autocomplete-links \
+        ~/.vim/pack/plugins/start/vimwiki-autocomplete-links
+<
+
+Using vim-plug: >
+
+    Plug 'kaskajp/vimwiki-autocomplete-links'
+<
+
+Using Vundle: >
+
+    Plugin 'kaskajp/vimwiki-autocomplete-links'
+<
+
+After installation, run `:helptags ALL` to generate help tags.
+
+==============================================================================
+3. USAGE                                        *vimwiki-autocomplete-links-usage*
+
+1. Open a vimwiki file (FileType must be `vimwiki`)
+2. Type `[[` to start a link
+3. Type a few characters of the page name you want to link to
+4. Press <C-Space> to trigger completion
+5. Use <Up>/<Down> arrows to navigate the popup menu
+6. Press <Enter> to accept the selection and close the link with `]]`
+
+==============================================================================
+4. CONFIGURATION                              *vimwiki-autocomplete-links-config*
+
+                                        *g:vimwiki_link_complete_popup_arrows*
+g:vimwiki_link_complete_popup_arrows ~
+    Enable arrow key navigation in popup menu.
+    When enabled, <Up> and <Down> work like <C-p> and <C-n> in popups.
+
+    Default: 1 (enabled)
+
+    To disable: >
+        let g:vimwiki_link_complete_popup_arrows = 0
+<
+
+The plugin uses your existing vimwiki configuration from |g:vimwiki_list|:
+- `path`: The wiki root directory (default: ~/vimwiki/)
+- `ext`: The file extension (default: .wiki)
+
+==============================================================================
+5. MAPPINGS                                  *vimwiki-autocomplete-links-mappings*
+
+The following mappings are set for vimwiki buffers:
+
+<C-Space>       Trigger link completion (insert mode)
+<CR>            Accept selection and append `]]`, or normal Enter if no popup
+
+Global mappings (when popup is visible):
+
+<Up>            Move to previous item (same as <C-p>)
+<Down>          Move to next item (same as <C-n>)
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:
+
