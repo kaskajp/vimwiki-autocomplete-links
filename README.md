@@ -2,6 +2,8 @@
 
 Autocomplete `[[links]]` to other notes in your VimWiki.
 
+<img width="1201" height="515" alt="Screenshot From 2025-12-04 21-33-12" src="https://github.com/user-attachments/assets/7600feec-769e-49f1-939e-201b7870546f" />
+
 ## Features
 
 - Autocomplete wiki page names when typing `[[`
