@@ -37,6 +37,14 @@ Plugin 'kaskajp/vimwiki-autocomplete-links'
 use 'kaskajp/vimwiki-autocomplete-links'
 ```
 
+### Generate help tags
+
+After installation, generate the help tags in Vim:
+
+```vim
+:helptags ALL
+```
+
 ## Requirements
 
 - [vimwiki](https://github.com/vimwiki/vimwiki) must be installed
